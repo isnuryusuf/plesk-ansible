@@ -5,7 +5,7 @@
   get_url: url={{one_click_installer}} dest=/root/one-click-installer mode=0755
 
 - name: Install Plesk
-  command: /root/one-click-installer --tier "{{plesk_tier}}"
+  command: plesk bin pleskbackup server --exclude-client-file=domains.txt -v
 # async: 3000
 # poll: 0
 # register: plesk_installer_sleeper
