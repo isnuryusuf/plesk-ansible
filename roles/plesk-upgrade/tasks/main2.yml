@@ -3,7 +3,7 @@
 - name: Download one-click-installer
   get_url: url=https://autoinstall.plesk.com/plesk-installer dest=/root/plesk-installer mode=0755
 
-- name: Install Plesk
+- name: Upgrade Plesk
   command: sh /root/plesk-installer upgrade
   #command: sh /root/plesk-installer upgrade plesk stable
   #command: sh /root/plesk-installer upgrade plesk 17.0.17
