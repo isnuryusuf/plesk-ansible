@@ -3,4 +3,5 @@
 
 - name: Install Plesk
   command: /usr/local/psa/admin/bin/autoinstaller
+  # command: plesk installer update
 
