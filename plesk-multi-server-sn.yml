@@ -1,0 +1,9 @@
+---
+# This playbook deploys the whole application stack in this site.
+
+- name: Install Service Nodes
+  hosts: service-nodes
+  remote_user: root
+  roles:
+    - plesk-install
+    - plesk-configure
