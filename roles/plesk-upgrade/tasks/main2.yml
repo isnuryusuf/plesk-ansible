@@ -1,6 +1,6 @@
 ---
 
-- name: Download one-click-installer
+- name: Download plesk-installer
   get_url: url=https://autoinstall.plesk.com/plesk-installer dest=/root/plesk-installer mode=0755
 
 - name: Upgrade Plesk
