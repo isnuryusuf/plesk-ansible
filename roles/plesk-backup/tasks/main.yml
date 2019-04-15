@@ -6,6 +6,7 @@
 
 - name: Install Plesk
   command: plesk bin pleskbackup server --exclude-client-file=domains.txt -v
+  # command: plesk bin pleskrestore --restore "/root/example.com.zip" -ignore-sign -verbose -level domains
 # async: 3000
 # poll: 0
 # register: plesk_installer_sleeper
