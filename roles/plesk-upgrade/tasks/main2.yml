@@ -1,8 +1,9 @@
 ---
 
 - name: Download plesk-installer
-  get_url: url=https://autoinstall.plesk.com/plesk-installer dest=/root/plesk-installer mode=0755
-
+  #get_url: url=https://autoinstall.plesk.com/plesk-installer dest=/root/plesk-installer mode=0755
+  get_url: url={{plesk_installer}} dest=/root/plesk-installer mode=0755
+  
 - name: Upgrade Plesk
   #command: sh /root/plesk-installer upgrade
   command: sh /root/plesk-installer upgrade plesk stable
