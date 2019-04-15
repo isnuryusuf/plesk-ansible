@@ -23,14 +23,14 @@ extore_url: https://ext.plesk.com
 eula_license_agreed: true
 ip_type: shared
 admin_info_not_required: true
-admin_email: admin@none.none
-admin_company: Plesk
-admin_address: Oct 4
-admin_city: Novosibirsk
-admin_state: Novosibirskaya Oblast
+admin_email: support@biznetgio.com
+admin_company: PT Biznet Gio Nusantara
+admin_address: DKI Jakarta
+admin_city: Jakarta
+admin_state: Indonesia
 admin_zip: 630000
-admin_country: RU
-admin_phone: 89139130000
+admin_country: ID
+admin_phone: 085692091009
 
 ### Plesk settings end
 ######################################################
@@ -81,99 +81,3 @@ do_image_id: centos-7-2-x64
 
 
 
-######################################################
-### Amazon EC2 settings begin
-
-### It's recommended to install AWS CLI to get additional parameters or tests
-# how to install pip: https://pip.pypa.io/en/stable/installing/
-# pip install awscli
-
-### SSH key in your AWS account
-amazon_ssh_key_id: segorov
-
-### AWS EC2 VM instance type 
-# https://aws.amazon.com/ec2/instance-types/
-ec2_instance_type: t2.micro
-
-### AWS EC2 Regions
-# http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
-ec2_region_id: eu-west-1
-
-### ImageId can be found in your AWS UI console if it's your image, or via command below if it's Marketplace image
-### IMPORTANT: make sure that ec2_region_id is the same, which is used in your ~/.aws/config for awscli
-#
-# aws ec2 describe-images --owners aws-marketplace --filters Name=description,Values='*Plesk*' | grep -A 20 '"Name": "Plesk 17.5' | grep '"Name":\|"ImageId":'
-#ec2_ami_id: ami-54c5c232
-#
-# an alternative way to identify image is to specify it's name by mask
-# note: if ec2_ami_id is defined, it has higher priority
-# note: if by the specified mask more than one image is found then task will be stopped with a list of available images
-ec2_ami_name: "*Plesk*17.5*WordPress*CentOS*7*"
-
-### a remote user, which will be used for access via SSH
-# In case of Plesk AMIs for CentOS based it's "centos", for Ubuntu it's "ubuntu"
-# For bare images "ec2-user" is required by Amazon
-ec2_remote_ssh_user: centos
-
-### Get a list of available subnets from your AWS account
-# aws ec2 describe-subnets | less
-ec2_vpc_subnet_id: subnet-792ef230
-
-### Security Group should be selected from a list of pre-defined in Marketplace
-# aws ec2 describe-images --owners aws-marketplace --filters Name=group-name,Values='*Plesk Onyx*'
-ec2_security_group: sg-0aa6b673
-
-### How to access Plesk Panel
-# https://<host-name-or-IP>:8443
-
-### How to access server via ssh
-# ssh ec2-user@<host-name-or-IP>
-
-### Amazon EC2 settings end
-######################################################
-
-
-
-
-######################################################
-### Azure settings begin
-
-### 
-# how to install pip: https://pip.pypa.io/en/stable/installing/
-# pip install azure-cli
-
-### Initial configuration of Azure CLI
-# az login
-
-### Define Azure Region(Location)
-# A list of available locations can be found here https://azure.microsoft.com/en-us/regions/
-azure_location: "East US"
-
-### Get list of available offers in Azure Marketplace
-# az vm image list-offers -p Plesk -l "East US"
-
-
-### Get list of available images in scope of offers in Azure Marketplace
-### Note: this is just for an information. It's not used for a configuration.
-# az vm image list-skus --offer plesk-onyx-linux --publisher Plesk --location "East US"
-
-### Get list of available images in scope of offers in Azure Marketplace
-# az vm image list --offer plesk-onyx-linux --publisher Plesk --location "East US" --all
-
-###
-# 
-# az vm create -n Segorov-VM -g segorov-rg --image plesk:plesk-onyx-linux:plsk-cent-hst-azr-m:17.5.3
-#        --vnet-name MyVnet --subnet subnet1 --availability-set MyAvailabilitySet --public-ip-
-#        address-dns-name MyUniqueDnsName --ssh-key-value ~/.ssh/id_rsa.pub
-
-azure_name: Azure VM with Plesk
-azure_role_size: Small
-azure_image: plesk:plesk-onyx-linux:plsk-cent-hst-azr-m:17.5.3
-azure_user: root
-ssh_cert_path: "{{ssh_pubkey_file}}"
-#    storage_account: my-storage-account
-#    wait: True
-#    state: present
-
-### Azure settings end
-######################################################

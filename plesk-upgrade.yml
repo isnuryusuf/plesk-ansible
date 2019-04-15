@@ -1,0 +1,12 @@
+---
+# This playbook deploys the whole application stack in this site.
+
+- name: Install Plesk
+  remote_user: root
+  hosts: plesk-standalone
+  roles:
+    - plesk-check-version
+    - plesk-backup
+    - plesk-upgrade
+    - plesk-check-version
+
