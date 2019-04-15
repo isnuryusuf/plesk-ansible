@@ -7,3 +7,4 @@
   command: sh /root/plesk-installer upgrade
   #command: sh /root/plesk-installer upgrade plesk stable
   #command: sh /root/plesk-installer upgrade plesk 17.0.17
+  
