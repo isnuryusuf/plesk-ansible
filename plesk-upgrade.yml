@@ -1,5 +1,4 @@
 ---
-# This playbook deploys the whole application stack in this site.
 
 - name: Install Plesk
   remote_user: root
