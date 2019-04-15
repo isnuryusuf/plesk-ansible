@@ -4,7 +4,8 @@
   get_url: url=https://autoinstall.plesk.com/plesk-installer dest=/root/plesk-installer mode=0755
 
 - name: Upgrade Plesk
-  command: sh /root/plesk-installer upgrade
-  #command: sh /root/plesk-installer upgrade plesk stable
+  #command: sh /root/plesk-installer upgrade
+  command: sh /root/plesk-installer upgrade plesk stable
   #command: sh /root/plesk-installer upgrade plesk 17.0.17
+  #https://docs.plesk.com/en-US/onyx/deployment-guide/plesk-installation-and-upgrade-on-multiple-servers/upgrading-plesk-in-unattended-mode/upgrading-plesk-for-linux-in-unattended-mode.76860/
   
